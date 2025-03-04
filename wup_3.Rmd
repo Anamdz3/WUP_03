@@ -52,8 +52,24 @@ This is also nine times average number of drinks for those who are seated in the
 
 ## Inferential Tests
 
+```{r}
+model1 <- aov(alcohol~Seat,data=davisdata)
+summary.aov(model1)
+```
+
+The one way anova inferential test  shows a small p-value which is 0.000116, which means that there is a probability of having no difference between alcohol consumed between the front, middle and back rows that are available for people to be seated in. We reject the null hypothesis becuase the probability of getting this result is significantly lower
+
+```{r}
+#we specify the margins starting at the bottom and proceeding clockwise - thus 8.7 is the left side margin to hold the names of the factors
+par(mar = c(3, 8.7, 2, 2))
+plot(TukeyHSD(model1),las=2)
+```
+
+This plot shows that there is a difference in the alcohol consumed between the three sections that a person can be seated in.
+The intervals from the Middle-Front cross which tells us that there is not a significant difference between these two sections. on the other hand, the intervals of the Front-Back and Middle-Back never cross which means that there is a significant difference between the amount of drinks per section.
 
 
 ## Conclusions
 
+ After looking over the numerical data and inferential tests, we can conclude that the people who are seated in the back section are consuming more alcohol that those who are seated in the front or middle section. The numerical data shows that the average number of drinks for the people seated in the back is about 9 drinks while there is three times the average number of drinks for those who are seated in the middle and nine times average number of drinks for those who are seated in the front. We also got a p-value of 0.000116 which indicates that there is a chance of having no difference between alcohol consumed between the front, middle and back rows that are available for people to be seated in.
 
