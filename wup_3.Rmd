@@ -28,12 +28,16 @@ basicCN <- ggplot(davisdata,aes(y=alcohol,x=Seat))
 basicCN + geom_boxplot()
 ```
   
+  The medium number of drinks is higher than the people seated at the front and the people seated in the middle row. We can see that by looking at the boxes. theres not too much difference between the back and the middle and front 
   
 ### get fancy  
 
 ```{r}
 basicCN + geom_boxplot(notch=TRUE,outlier.color = "red") + stat_boxplot(geom ='errorbar') + labs(title="Fancy notch boxplot \n with 2 lines")
 ```
+
+The fancy notch displays the three categories of seating arrangements which was the front, middle and back. We can observe that people who are seated in the back had a median that differed while the people in the front and back had more confident median plot.
+We can assume that people in the back consume more alcoholic drinks compared to those who were seated in the middle and front rows.
 
 ## Numerical Summarys 
 
